@@ -34,9 +34,9 @@ export default {
           to: "/semua-kelas",
         },
         {
-          name: "Kelas saya",
+          name: "V-Model",
           icon: "far fa-bookmark",
-          to: "/kelas-saya",
+          to: "/example/v-model",
         },
         {
           name: "Data Binding",

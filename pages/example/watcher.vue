@@ -4,6 +4,11 @@
     <input type="text" class="form-control" v-model="question">
     <h5>{{answer}}</h5>
     <img :src="img" class="w-100" alt="" srcset="">
+
+    <h4>
+      GB: <input type="number" v-model="gb">
+      MB: <input type="number" v-model="mb">
+    </h4>
   </div>
 </template>
 <script>
@@ -13,6 +18,8 @@ export default {
       img: "",
       question: "",
       answer: "hhmmmm.... apa ya?",
+      gb: null,
+      mb: null
     };
   },
   watch: {
@@ -21,6 +28,12 @@ export default {
         this.getAnswer();
       }
     },
+    gb(newValue){
+      this.mb = newValue * 1024
+    },
+    mb(newValue){
+      this.gb = newValue / 1024
+    }
   },
   methods: {
     getAnswer() {
