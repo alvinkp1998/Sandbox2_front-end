@@ -5,25 +5,21 @@
       <input-type :value="name" @get="(val)=>name=val" />
       <input-type :value="name" @get="(val)=>name=val" />
       <input-type :value="name" @get="(val)=>name=val" />
-      <input-type :value="name" @get="(val)=>name=val" />
-      <input-type :value="name" @get="(val)=>name=val" />
-      <input-type :value="name" @get="(val)=>name=val" />
-      <input-type :value="name" @get="(val)=>name=val" />
-      <input-type :value="name" @get="(val)=>name=val" />
-      <input-type :value="name" @get="(val)=>name=val" />
     </section>
     {{name}}
     <hr>
+      <input-type :value="name" @get="(val)=>name=val" />
+      <input-type :value="name" @get="(val)=>name=val" />
+    <hr>
     <div class="row">
       <div v-for="(item,i) in getListClass" :key="i" class="col-md-4">
-        <class-item :name="item.name" :desc="item.description" :img="item.img" @follow-class="getValue" />
+        <class-item :name="item.name" :desc="item.description" :img="item.img" @follow-class="getFollow" />
       </div>
     </div>
-
     <h1 class="mt-3">FOLLOWING CLASS</h1>
     <div class="row">
       <div v-for="(item,i) in following" :key="i" class="col-md-4">
-        <class-item unfollow :name="item.name" :desc="item.description" :img="item.img" @unfollow-class="unfollow" />
+        <class-item unfollow :name="item.name" :desc="item.description" :img="item.img" @unfollow-class="getUnfollow" />
       </div>
     </div>
   </div>
@@ -31,6 +27,7 @@
 <script>
 export default {
   computed: {
+    // Menampilkan 3 list class 
     getListClass() {
       return this.listClass.filter((item, i) => i < 3);
     },
@@ -58,15 +55,25 @@ export default {
     };
   },
   methods: {
-    getValue(data) {
-      debugger;
+    getFollow(data){
       this.following.push(data);
     },
-    unfollow(data) {
-      this.following = this.following.filter(
-        (follow) => follow.name != data.name
-      );
+    getUnfollow(data){
+      this.following = this.following.filter(follow => follow.name != data.name)
+    },
+    notif(){
+      this.$swal({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+      footer: '<a href="">Why do I have this issue?</a>'
+    })
     },
   },
+  // mounted(){
+  //   setTimeout(() => {
+  //     this.notif()
+  //   }, 2000);
+  // },
 };
 </script>

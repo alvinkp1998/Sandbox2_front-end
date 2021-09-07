@@ -5,7 +5,7 @@
       <h5 class="card-title">{{name}}</h5>
       <p class="card-text">{{desc}}</p>
       <button v-if="!unfollow" type="button" class="btn btn-primary" @click="followClass">Follow</button>
-      <button v-else type="button" class="btn btn-outline-danger" @click="followClass">Unfollow</button>
+      <button v-else type="button" class="btn btn-danger" @click="unfollowClass">Unfollow</button>
     </div>
   </div>
 </template>
@@ -24,21 +24,28 @@ export default {
       type: String,
       default: "https://shiftacademy.id/wp-content/uploads/2021/09/1.png",
     },
-    unfollow: {
+    unfollow:{
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   methods: {
-    followClass() {
+    followClass(){
       const data = {
         name: this.name,
         desc: this.desc,
-        img: this.img,
-      };
-      if (this.unfollow) this.$emit("unfollow-class", data);
-      else this.$emit("follow-class", data);
+        img: this.img
+      }
+      this.$emit('follow-class', data)
     },
+    unfollowClass(){
+      const data = {
+        name: this.name,
+        desc: this.desc,
+        img: this.img
+      }
+      this.$emit('unfollow-class', data)
+    }
   },
 };
 </script>

@@ -10,7 +10,7 @@
       <ul class="sidebar-menu">
         <li v-for="(menu,i) in listMenu" :key="i">
           <nuxt-link class="nav-link" :to="menu.to">
-            <i :class="menu.icon"></i> <span>{{menu.name}}</span>
+            <i :class="menu.icon"></i> <span>{{menu.name}} </span>
           </nuxt-link>
         </li>
       </ul>
