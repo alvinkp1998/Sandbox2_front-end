@@ -63,6 +63,11 @@ export default {
           icon: "fas fa-book",
           to: "/example/emit",
         },
+        {
+          name: "Sandbox",
+          icon: "fas fa-book",
+          to: "/sandbox/sandbox",
+        },
       ],
     };
   },
