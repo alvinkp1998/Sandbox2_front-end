@@ -13,6 +13,11 @@
             <i :class="menu.icon"></i> <span>{{menu.name}} </span>
           </nuxt-link>
         </li>
+        <li v-for="(item,i) in listClass" :key="i">
+          <nuxt-link class="nav-link" to="/example/http-request/">
+            <i class="far fa-bookmark"></i> <span>{{item.name}} </span>
+          </nuxt-link>
+        </li>
       </ul>
     </aside>
   </div>
@@ -68,8 +73,32 @@ export default {
           icon: "fas fa-book",
           to: "/sandbox/sandbox",
         },
+        {
+          name: "Http-request",
+          icon: "fas fa-book",
+          to: "/example/http-request",
+        },
+        {
+          name: "State Management",
+          icon: "fas fa-book",
+          to: "/example/state-management",
+        },
       ],
     };
   },
+  computed: {
+        listClass(){
+          return this.$store.state.class.listClass
+        }
+      },
+  mounted() {
+        this.GET_CLASS()
+      },
+  methods: {
+        async GET_CLASS(){
+          const listData = await this.requestGet("api/class")
+          this.$store.dispatch("class/setClass", listData.data) //Pasangannya Action
+        }
+      },
 };
 </script>

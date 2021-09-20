@@ -70,7 +70,9 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    "~/plugins/mixins.js"
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -126,7 +128,9 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: "https://service-classroom.herokuapp.com/"
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -137,7 +141,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  server: {
-    port: 8000 // default: 3000
-  }
 };
