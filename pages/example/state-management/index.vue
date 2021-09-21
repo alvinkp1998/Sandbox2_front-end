@@ -29,11 +29,9 @@ export default {
     this.GET_CLASS;
   },
   methods: {
-    async addRandomNumber() {
-      const data = await this.$axios.$get(
-        "https://www.random.org/integers/?num=1&min=-1000&max=1000&col=1&base=10&format=plain&rnd=new"
-      );
-      console.log(data);
+    async GET_CLASS() {
+      const listData = await this.requestGet("api/class");
+      this.$store.dispatch("class/setClass", listData.data);
     }
   }
 };
