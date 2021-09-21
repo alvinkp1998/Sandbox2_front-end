@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    this.GET_CLASS();
+    this.GET_CLASS;
   },
   methods: {
     async addRandomNumber() {
