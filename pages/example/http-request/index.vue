@@ -11,7 +11,6 @@
           :name="item.name"
           :desc="item.description"
           :img="item.img"
-          @click.native="editClass(item.id)"
         />
       </div>
     </div>

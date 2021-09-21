@@ -69,8 +69,8 @@ export default {
           to: "/example/emit"
         },
         {
-          name: "Sandbox",
-          icon: "fas fa-book",
+          name: "Sandbox-1",
+          icon: "fab fa-stripe-s",
           to: "/sandbox/sandbox"
         },
         {
