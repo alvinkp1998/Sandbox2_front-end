@@ -74,6 +74,11 @@ export default {
           to: "/sandbox/sandbox"
         },
         {
+          name: "Sandbox-2",
+          icon: "fab fa-stripe-s",
+          to: "/sandbox/sandbox2"
+        },
+        {
           name: "Http-request",
           icon: "fas fa-book",
           to: "/example/http-request"
