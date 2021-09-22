@@ -2,7 +2,7 @@
   <div class="container">
     <p>todolist :</p>
     <ul>
-      <li v-for="(todo, i) in todos" :key="i">
+      <li class="pt-2" v-for="(todo, i) in todos" :key="i">
         <input type="checkbox" class="form-check-input" />
         {{ todo }}
         <button @click="removeTodo(todos)" class="float-right btn">

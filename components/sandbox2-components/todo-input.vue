@@ -25,6 +25,14 @@ export default {
       this.$emit("addTodo", this.todo);
     }
   }
+  // computed: {
+  //   val: {
+  //     get() {
+  //       return this.todo;
+  //     },
+  //     set(todo) {}
+  //   }
+
   //   methods: {
   //     ...mapActions("todos", ["addTodo"])
   //   }

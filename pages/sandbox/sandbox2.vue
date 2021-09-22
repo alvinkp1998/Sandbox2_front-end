@@ -2,11 +2,7 @@
   <div class="container">
     <div class="card">
       <h2 class="text-center">SANDBOX FRONTEND 2</h2>
-      <sandbox2-components-todo-input
-        :todo="todo"
-        :todos="todos"
-        @addTodo="addTodo"
-      />
+      <sandbox2-components-todo-input :todo="todo" @addTodo="addTodo" />
       <sandbox2-components-todo-list
         :todos="todos"
         :todo="todo"
@@ -20,13 +16,13 @@
 export default {
   data() {
     return {
-      todo: "",
-      todos: []
+      todos: [],
+      todo: ""
     };
   },
   methods: {
-    addTodo() {
-      this.todos.push(this.todo);
+    addTodo(todo) {
+      this.todos.push(todo);
     },
     removeTodo(index) {
       this.todos.splice(index, 1);
